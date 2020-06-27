@@ -3,7 +3,10 @@ FROM node:12-alpine as build
 WORKDIR /usr/app
 
 COPY package.json .
+
 COPY yarn.lock .
+
+USER node
 
 RUN yarn 
 
