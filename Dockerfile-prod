@@ -4,11 +4,9 @@ WORKDIR /usr/app
 
 COPY package.json .
 
-COPY yarn.lock .
+COPY yarn.lock . 
 
-USER node
-
-RUN yarn 
+RUN yarn --network-timeout 1000000000
 
 COPY  . .
 
